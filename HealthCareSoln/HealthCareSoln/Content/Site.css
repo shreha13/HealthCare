@@ -1,0 +1,221 @@
+﻿
+body {
+    background-color: #F4F6F7;
+}
+
+.noMargin {
+    margin: 0 !important
+}
+
+.button {
+    width: 180px;
+    max-width: 180px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-right: 20px;
+    box-shadow: 2px 2px #ccc;
+    border: none;
+}
+
+    .button:focus {
+        outline: none;
+    }
+
+.headerIcons {
+    color: #009ACA;
+}
+
+.generalColor {
+    color: #2966A6;
+}
+
+.headerTitle {
+    margin: 0 10px
+}
+
+.search {
+    padding: 10px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchInput {
+    width: 98%;
+    border: none;
+    outline: none;
+}
+
+    .searchInput:active {
+        outline: none;
+    }
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-top: 10px;
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box
+}
+
+.patientCount {
+    align-self: flex-end;
+    font-size: 11px;
+    color: forestgreen;
+}
+
+.patientCountRed {
+    align-self: flex-end;
+    font-size: 11px;
+    color: forestgreen;
+}
+
+.title {
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.titleContainer {
+    margin-bottom: 4px;
+}
+
+.divButton {
+    padding: 5px 15px;
+    background-color: #2966A6;
+    color: white;
+    font-size: 11px;
+    border-radius: 7px;
+}
+
+.bottomMargin {
+    margin-bottom: 15px;
+}
+
+.alignText {
+    text-align: center;
+}
+
+/*
+.divTiming {
+    flex: 0.3;
+}
+
+.alignCenter {
+    text-align: center
+}
+
+.divDetails {
+    flex: 0.6
+}*/
+
+.patientDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+}
+
+.iconTop {
+    position: absolute;
+    top: 16px;
+    color: #ccc
+}
+
+.leftMargin {
+    margin-left: 25px;
+}
+
+.flexDisplay {
+    display: flex
+}
+
+.danger {
+    background-color: indianred
+}
+
+@media screen and (min-width: 1200px) {
+    .detailsGrid.col-lg-4 {
+        width: 29%;
+    }
+
+    .detailsGrid.col-lg-10 {
+        width: 87%;
+    }
+
+    .detailsGrid.col-lg-2 {
+        width: 13%
+    }
+}
+
+.detailsGrid {
+    padding-right: 0
+}
+
+
+.gridButton {
+    background-color: #2966A6;
+    color: white;
+    border-radius: 7px;
+    margin-top: 15px;
+    width: 140px;
+    max-width: 140px;
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    text-align: center;
+    float: right;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.detailsButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 15px;
+}
+
+.modalMenu {
+    display: flex;
+    width: 120px;
+    z-index: 10;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 5px 2px #eaeaea;
+    border-radius: 5px;
+    position: absolute;
+    min-width: 120px;
+}
+
+.modalMenu div {
+    padding: 5px;
+    font-weight: 600
+}
+
+.modalMenu hr {
+    width: 100%;
+    margin: 0;
+
+}
+
+.colorDanger {
+    color: red;
+}
+
+.colorSuccess {
+    color: green;
+}
+
+.colorBlue {
+    color: #5A89BA
+}
