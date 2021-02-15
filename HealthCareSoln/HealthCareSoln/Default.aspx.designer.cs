@@ -15,31 +15,31 @@ namespace HealthCareSoln
     {
 
         /// <summary>
-        /// Patients control.
+        /// RepeaterApp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HealthCareSoln.Common.Patients Patients;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterApp;
 
         /// <summary>
-        /// Patients1 control.
+        /// RepeaterPatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HealthCareSoln.Common.Patients Patients1;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterPatient;
 
         /// <summary>
-        /// Patients2 control.
+        /// RepeaterVisited control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HealthCareSoln.Common.Patients Patients2;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterVisited;
 
         /// <summary>
         /// Appointments control.

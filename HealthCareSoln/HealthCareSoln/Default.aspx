@@ -32,141 +32,80 @@
         </div>
 
         <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12" id="appCalendar">
-            <div class="col-md-6 col-sm-12 col-lg-4 col-xs-12 detailsGrid">
+            <div class="col-md-6 col-sm-12 col-lg-4 col-xs-12 detailsGrid" id="appGrid">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
                     <div>
                         <i class="fa fa-calendar generalColor" aria-hidden="true"></i><span class="generalColor title">Appointments Today</span>
                     </div>
                     <span class="patientCount">Today-85</span>
                 </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12:30pm</div>
-                        <div class="divButton">Check - In</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
+                <asp:Repeater ID="RepeaterApp" runat="server">
+                    <ItemTemplate>
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
+                            <div>
+                                <div class="generalColor title bottomMargin alignText"><%#Eval("Time") %></div>
+                                <div class="divButton">Check - In</div>
+                            </div>
+                            <div class="flexDisplay">
+                                <div class="patientDetails">
+                                    <div class="titleContainer"><span class="title"><%#Eval("PatientName") %> (<%#Eval("Id") %>)</span></div>
+                                    <div class="titleContainer"><span class="title">Room:</span> <%#Eval("Room") %></div>
+                                    <div class="titleContainer"><span class="title">Phone:</span> <%#Eval("Phone") %></div>
+                                </div>
+                                <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id='<%#Eval("Id") %>' onclick="showMenu('<%#Eval("Id") %>', 'appMenu', 'modalMenuContainer')" aria-hidden="true"></i></div>
+                            </div>
                         </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell1" onclick="showMenu('ell1',  'appMenu', 'modalMenuContainer')" aria-hidden="true"></i></div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12:30pm</div>
-                        <div class="divButton">Check - In</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
-                        </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell2" onclick="showMenu('ell2',  'appMenu', 'modalMenuContainer')" aria-hidden="true"></i></div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12:30pm</div>
-                        <div class="divButton">Check - In</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
-                        </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell3" onclick="showMenu('ell3', 'appMenu', 'modalMenuContainer')" aria-hidden="true"></i></div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12:30pm</div>
-                        <div class="divButton">Check - In</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
-                        </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell4" onclick="showMenu('ell4',  'appMenu', 'modalMenuContainer')" aria-hidden="true"></i></div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12:30pm</div>
-                        <div class="divButton">Check - In</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
-                        </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell5" onclick="showMenu('ell5', 'appMenu', 'modalMenuContainer')" aria-hidden="true"></i></div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
-            <div class="detailsGrid col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="detailsGrid col-lg-4 col-md-6 col-sm-12 col-xs-12" id="checkedInGrid">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
                     <span class="generalColor title">Patients Checked In</span>
                     <span class="patientCountRed">Cancelled-5</span>
                 </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12mins</div>
-                        <div class="divButton danger">Check - Out</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
+                <asp:Repeater ID="RepeaterPatient" runat="server">
+                    <ItemTemplate>
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
+                            <div>
+                                <div class="generalColor title bottomMargin alignText"><%#Eval("Time") %></div>
+                                <div class="divButton danger">Check - Out</div>
+                            </div>
+                            <div class="flexDisplay">
+                                <div class="patientDetails">
+                                    <div class="titleContainer"><span class="title"><%#Eval("PatientName") %> (<%#Eval("Id") %>)</span></div>
+                                    <div class="titleContainer"><span class="title">Room:</span> <%#Eval("Room") %></div>
+                                    <div class="titleContainer"><span class="title">Phone:</span> <%#Eval("Phone") %></div>
+                                </div>
+                                <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id='<%#Eval("Id") %>' onclick="showMenu('<%#Eval("Id") %>', 'patientMenu', 'patientMenuContainer')" aria-hidden="true"></i></div>
+                            </div>
                         </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell6" onclick="showMenu('ell6', 'patientMenu', 'patientMenuContainer')" aria-hidden="true"></i></div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12mins</div>
-                        <div class="divButton danger">Check - Out</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
-                        </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell7" onclick="showMenu('ell7', 'patientMenu', 'patientMenuContainer')"  aria-hidden="true"></i></div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
-                    <div>
-                        <div class="generalColor title bottomMargin alignText">12mins</div>
-                        <div class="divButton danger">Check - Out</div>
-                    </div>
-                    <div class="flexDisplay">
-                        <div class="patientDetails">
-                            <div class="titleContainer"><span class="title">Patient Name (#534351)</span></div>
-                            <div class="titleContainer"><span class="title">Room:</span> 201</div>
-                            <div class="titleContainer"><span class="title">Phone:</span> +1 84613158658</div>
-                        </div>
-                        <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" id="ell8" onclick="showMenu('ell8', 'patientMenu', 'patientMenuContainer')"  aria-hidden="true"></i></div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 detailsGrid">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 detailsGrid" id="visitedGrid">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
                     <span class="generalColor title">Patients Seen Today</span>
                     <span class="patientCount">Today-5</span>
                 </div>
-                <uc3:Patients ID="Patients" runat="server"></uc3:Patients>
-                <uc3:Patients ID="Patients1" runat="server"></uc3:Patients>
-                <uc3:Patients ID="Patients2" runat="server"></uc3:Patients>
+                <asp:Repeater ID="RepeaterVisited" runat="server">
+                    <ItemTemplate>
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 card">
+                            <div>
+                                <div class="generalColor title alignText"><%#Eval("Time").ToString().Split(' ')[0] %></div>
+                                <div class="generalColor title alignText"><%#Eval("Time").ToString().Split(' ')[1] %></div>
+                                <div class="generalColor title alignText"><%#Eval("Time").ToString().Split(' ')[2] %></div>
+                            </div>
+                            <div class="flexDisplay">
+                                <div class="patientDetails">
+                                    <div class="titleContainer"><span class="title"><%#Eval("PatientName") %> (<%#Eval("Id") %>)</span></div>
+                                    <div class="titleContainer"><span class="title">Room:</span> <%#Eval("Room") %></div>
+                                    <div class="titleContainer"><span class="title">Phone:</span> <%#Eval("Phone") %></div>
+                                </div>
+                                <div class="leftMargin"><i class="fa fa-ellipsis-v iconTop" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <div class="col-md-6 col-sm-12 col-lg-2 col-xs-12 detailsGrid detailsButtons">
                 <button class="gridButton" id="add1" type="button" onclick="showTab('schedule', 'appCalendar', 'add')">Add Schedule</button>
@@ -176,7 +115,6 @@
         </div>
     </div>
     <uc1:Appointments ID="Appointments" runat="server"></uc1:Appointments>
-     <uc2:CheckedIn ID="CheckedIn" runat="server"></uc2:CheckedIn>
-
+    <uc2:CheckedIn ID="CheckedIn" runat="server"></uc2:CheckedIn>
 
 </asp:Content>
